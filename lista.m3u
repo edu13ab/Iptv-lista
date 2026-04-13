@@ -1,0 +1,21 @@
+#EXTM3U
+
+# 🇪🇸 España
+#EXTINF:-1, España (M3U.CL)
+https://www.m3u.cl/lista/ES.m3u
+
+# 🌍 Lista Total
+#EXTINF:-1, Lista Total (M3U.CL)
+https://www.m3u.cl/lista/total.m3u
+
+# 🇪🇸 IPTV-org Español
+#EXTINF:-1, IPTV Org Español
+https://iptv-org.github.io/iptv/languages/spa.m3u
+
+# 🎵 Música
+#EXTINF:-1, Música
+https://www.m3u.cl/lista/musica.m3u
+
+# 📺 TDT España
+#EXTINF:-1, TDTChannels
+https://www.tdtchannels.com/lists/tv.m3u8
