@@ -1,28 +1,20 @@
-name: IPTV AUTO
+import requests
 
-on:
-  schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
+urls = [
+    "https://www.m3u.cl/lista/ES.m3u",
+    "https://iptv-org.github.io/iptv/languages/spa.m3u",
+    "https://www.tdtchannels.com/lists/tv.m3u8"
+]
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+contenido_final = "#EXTM3U\n"
 
-    steps:
-    - uses: actions/checkout@v3
+for url in urls:
+    try:
+        r = requests.get(url, timeout=10)
+        if r.status_code == 200:
+            contenido_final += r.text + "\n"
+    except:
+        pass
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - run: pip install requests
-
-    - run: python update.py
-
-    - run: |
-        git config --global user.name "bot"
-        git config --global user.email "bot@github.com"
-        git add lista.m3u
-        git commit -m "auto update" || echo "no changes"
-        git push
+with open("lista.m3u", "w", encoding="utf-8") as f:
+    f.write(contenido_final)
