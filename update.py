@@ -1,15 +1,10 @@
 import requests
 
 urls = [
-    
     "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
     "https://pastebin.com/raw/YVBjE9ii",
     "https://pastebin.com/raw/kJuhKyDw",
-    "https://www.m3u.cl/lista/ES.m3u",
-
-    "https://www.m3u.cl/lista/ES.m3u",
-    "https://iptv-org.github.io/iptv/languages/spa.m3u",
-    "https://www.tdtchannels.com/lists/tv.m3u8",
+    "https://www.m3u.cl/lista/ES.m3u"
 ]
 
 contenido_final = "#EXTM3U\n"
