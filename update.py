@@ -12,7 +12,10 @@ for url in urls:
     try:
         r = requests.get(url, timeout=10)
         if r.status_code == 200:
-            contenido_final += r.text + "\n"
+            lineas = r.text.splitlines()
+            for linea in lineas:
+                if linea.startswith("#EXTINF") or linea.startswith("http"):
+                    contenido_final += linea + "\n"
     except:
         pass
 
